@@ -9,4 +9,8 @@ public class Zombie {
         this.nombre = nombre;
         this.point = point;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
