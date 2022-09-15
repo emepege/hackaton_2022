@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
 
-public class MoveItemCommand {
+public class MoveItemCommand implements Command {
 
     private final String character;
     private final String item;

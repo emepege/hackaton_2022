@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
 
-public class AttackCommand {
+public class AttackCommand implements Command {
 
     private final String attacker;
     private final String defender;

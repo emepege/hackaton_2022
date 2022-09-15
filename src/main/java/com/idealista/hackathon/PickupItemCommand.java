@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
 
-public class PickupItemCommand {
+public class PickupItemCommand implements Command {
 
     private final String character;
     private final String item;

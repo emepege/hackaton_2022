@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
 
-public class MovementCommand {
+public class MovementCommand implements Command {
 
     private final String character;
     private final Direction direction;

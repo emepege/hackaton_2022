@@ -1,8 +1,6 @@
 package com.idealista.hackathon;
 
-public class Command {
+public interface Command {
 
-    public Command() {
 
-    }
 }
