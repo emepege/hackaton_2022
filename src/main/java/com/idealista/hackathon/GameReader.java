@@ -122,12 +122,12 @@ public class GameReader {
             String survivor = instrucciones1[1];
             String item = instrucciones1[2];
             String itemPlace = instrucciones1[3];
-            return new PickupItemCommand(survivor, item, ItemPlace.valueOf(itemPlace.toUpperCase()));
+            return new PickupItemCommand(survivor, new Item(item), ItemPlace.valueOf(itemPlace.toUpperCase()));
         }  if ("R".equals(type)) {
             String survivor = instrucciones1[1];
             String item = instrucciones1[2];
             String itemPlace = instrucciones1[3];
-            return new MoveItemCommand(survivor, item, ItemPlace.valueOf(itemPlace.toUpperCase()));
+            return new MoveItemCommand(survivor, new Item(item), ItemPlace.valueOf(itemPlace.toUpperCase()));
         } else {
             String attaker = instrucciones1[1];
             String defender = instrucciones1[2];
