@@ -1,6 +1,7 @@
 package com.idealista.hackathon;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class World {
@@ -9,6 +10,7 @@ public class World {
     public Map<String, Zombie> zombies;
     public Map<String, Survivor> survivors;
     public Map<String, Item> items;
+    public List<Command> commands;
 
     public World(int size) {
         this.size = size;
@@ -27,6 +29,14 @@ public class World {
 
     public void addItem(Item item) {
         items.put(item.getNombre(), item);
+    }
+
+    public Survivor getSurvivor(String name) {
+        return survivors.get(name);
+    }
+
+    public void addCommand(Command command) {
+        commands.add(command);
     }
 
     public int getSize() {

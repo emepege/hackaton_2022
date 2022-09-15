@@ -11,4 +11,9 @@ public class MoveItemCommand implements Command {
         this.item = item;
         this.itemPlace = itemPlace;
     }
+
+    public World execute(World world) {
+        //TODO
+        return world;
+    }
 }

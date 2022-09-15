@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
 
-public class Zombie {
+public class Zombie implements Character {
 
     private String nombre;
     private Point point;
@@ -12,5 +12,15 @@ public class Zombie {
 
     public String getNombre() {
         return nombre;
+    }
+
+    @Override
+    public void move(Direction direction) {
+        this.point = point.move(direction);
+    }
+
+    @Override
+    public Point getPoint() {
+        return point;
     }
 }

@@ -3,7 +3,7 @@ package com.idealista.hackathon;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Survivor {
+public class Survivor implements Character {
 
     private final String nombre;
     private Point point;
@@ -35,5 +35,15 @@ public class Survivor {
 
     public void addItemOnBackpack(Item item) {
         this.backpack.add(item);
+    }
+
+    @Override
+    public void move(Direction direction) {
+        this.point = point.move(direction);
+    }
+
+    @Override
+    public Point getPoint() {
+        return point;
     }
 }
