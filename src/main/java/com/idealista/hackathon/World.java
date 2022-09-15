@@ -29,4 +29,19 @@ public class World {
         items.put(item.getNombre(), item);
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public Map<String, Zombie> getZombies() {
+        return zombies;
+    }
+
+    public Map<String, Survivor> getSurvivors() {
+        return survivors;
+    }
+
+    public Map<String, Item> getItems() {
+        return items;
+    }
 }

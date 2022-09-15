@@ -11,4 +11,12 @@ public class Game {
         this.world = world;
         this.commands = commands;
     }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public List<Command> getCommands() {
+        return commands;
+    }
 }
