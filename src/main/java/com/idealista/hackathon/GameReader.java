@@ -13,7 +13,7 @@ public class GameReader {
         BufferedReader reader;
 
         try {
-            reader = new BufferedReader(new FileReader("/home/smsempere/IdeaProjects/hackathon/hackaton_2022/example.txt"));
+            reader = new BufferedReader(new FileReader("/home/pconca/desarrollo/hackaton/hackaton_2022/example.txt"));
             String line = reader.readLine();
 
             // Instrucciones iniciales
@@ -77,8 +77,8 @@ public class GameReader {
         Survivor survivor = new Survivor(name, new Point(x, y), life, xp);
 
         for (int i = 0; i < nitems; i++) {
-            String[] itemArray = line.split(" ");
             line = reader.readLine();
+            String[] itemArray = line.split(" ");
             String itemName = itemArray[0];
             String itemPlace = itemArray[1];
             Item item = new Item(itemName);
