@@ -1,6 +1,6 @@
 package com.idealista.hackathon;
+
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -80,9 +80,15 @@ public class GameReader {
             String[] itemArray = line.split(" ");
             line = reader.readLine();
             String itemName = itemArray[0];
-            int itemPlace = Integer.parseInt(itemArray[1]); // TODO
+            String itemPlace = itemArray[1];
             Item item = new Item(itemName);
-            survivor.addItemOnBackpack(item);
+            if ("LeftHand".equals(itemPlace)) {
+                survivor.setLeftHandItem(item);
+            } else if ("RightHand".equals(itemPlace)) {
+                survivor.setRightHandItem(item);
+            } else {
+                survivor.addItemOnBackpack(item);
+            }
         }
 
         return survivor;
@@ -112,10 +118,22 @@ public class GameReader {
             String name = instrucciones1[1];
             String direction = instrucciones1[2];
             return new MovementCommand(name, Direction.valueOf(direction.toUpperCase()));
+        } if ("P".equals(type)) {
+            String survivor = instrucciones1[1];
+            String item = instrucciones1[2];
+            String itemPlace = instrucciones1[2];
+            return new PickupItemCommand(survivor, item, ItemPlace.valueOf(itemPlace.toUpperCase()));
+        }  if ("R".equals(type)) {
+            String survivor = instrucciones1[1];
+            String item = instrucciones1[2];
+            String itemPlace = instrucciones1[2];
+            return new MoveItemCommand(survivor, item, ItemPlace.valueOf(itemPlace.toUpperCase()));
         } else {
-            String name = instrucciones1[1];
-            String direction = instrucciones1[2];
-            return new MovementCommand(name, Direction.valueOf(direction.toUpperCase()));
+            String attaker = instrucciones1[1];
+            String defender = instrucciones1[2];
+            String item = instrucciones1[3];
+            int success = Integer.parseInt(instrucciones1[4]);
+            return new AttackCommand(attaker, defender, item, success == 1);
         }
     }
 }
