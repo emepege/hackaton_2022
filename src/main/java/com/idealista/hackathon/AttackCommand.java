@@ -13,4 +13,10 @@ public class AttackCommand implements Command {
         this.item = item;
         this.success = success;
     }
+
+    public World execute(World world) {
+        //TODO
+        return world;
+    }
+
 }

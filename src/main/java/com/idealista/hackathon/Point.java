@@ -33,6 +33,18 @@ public class Point implements Serializable {
         return new Point(x, y);
     }
 
+    public Point move(Direction direction) {
+        if (Direction.UP == direction) {
+            return new Point(x, y + 1);
+        } else if (Direction.DOWN == direction) {
+            return new Point(x, y - 1);
+        } else if (Direction.RIGHT == direction) {
+            return new Point(x + 1, y);
+        } else {
+            return new Point(x - 1, y);
+        }
+    }
+
     public List<Point> nearPoints() {
         return nearPointsVector.stream()
                 .map(vector -> new Point(x + vector.x, y + vector.y))
