@@ -17,5 +17,10 @@ public class WorldOutput {
             System.out.println(zombie.toString());
         });
 
+        Map<String, Item> items = world.getItems();
+        items.forEach((name, item) -> {
+            System.out.println(item.toString());
+        });
+
     }
 }
