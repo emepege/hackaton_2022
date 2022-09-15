@@ -22,5 +22,9 @@ public class WorldOutput {
             System.out.println(item.toString());
         });
 
+        for(Command command : world.getCommands()) {
+            System.out.println(command.toString());
+        }
+
     }
 }

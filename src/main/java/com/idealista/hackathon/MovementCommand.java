@@ -26,4 +26,10 @@ public class MovementCommand implements Command {
         if (point.getY() > world.getSize() || point.getY() < 0) return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        String dir = direction.toString().toLowerCase();
+        return String.format("M %s %s", name, dir.substring(0, 1).toUpperCase() + dir.substring(1));
+    }
 }

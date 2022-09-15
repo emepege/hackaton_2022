@@ -25,4 +25,9 @@ public class PickupItemCommand implements Command {
         }
         return world;
     }
+
+    @Override
+    public String toString() {
+        return String.format("P %s", character);
+    }
 }

@@ -8,12 +8,12 @@ import java.util.List;
 
 public class GameReader {
 
-    public Game read() {
+    public Game read(String filepath) {
 
         BufferedReader reader;
 
         try {
-            reader = new BufferedReader(new FileReader("/home/smsempere/IdeaProjects/hackathon/hackaton_2022/example.txt"));
+            reader = new BufferedReader(new FileReader(filepath));
             String line = reader.readLine();
 
             // Instrucciones iniciales
