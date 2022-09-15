@@ -54,4 +54,8 @@ public class World {
     public Map<String, Item> getItems() {
         return items;
     }
+
+    public List<Command> getCommands() {
+        return commands;
+    }
 }
