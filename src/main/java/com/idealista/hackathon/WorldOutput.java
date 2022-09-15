@@ -10,11 +10,12 @@ public class WorldOutput {
         System.out.println(world.getSurvivors().size() + " " +  world.getZombies().size() + " " +  world.getItems().size() + " " + world.getSize() + " " + world.getCommands().size());
         Map<String, Survivor> survivors = world.getSurvivors();
         survivors.forEach((name, survivor) -> {
-            System.out.println(survivor.get);
+            System.out.println(survivor.toString());
         });
-
-
-        System.out.println(world.getSurvivors().size() + " " +  world.getZombies().size() + " " +  world.getItems().size() + " " + world.getSize() + " " + world.getCommands().size());
+        Map<String, Zombie> zombies = world.getZombies();
+        zombies.forEach((name, zombie) -> {
+            System.out.println(zombie.toString());
+        });
 
     }
 }

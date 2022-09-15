@@ -62,8 +62,30 @@ public class Survivor implements Character {
         return backpack;
     }
 
+    private int nItems() {
+        int nItems = backpack.size();
+        if (leftHandItem != null) nItems++;
+        if (rightHandItem != null) nItems++;
+        return nItems;
+    }
+
     @Override
     public Point getPoint() {
         return point;
+    }
+
+    @Override
+    public String toString() {
+        String output = String.format("%d %d %d %d %d %s", life, xp, nItems(), point.getX(), point.getY(), nombre);
+        for (Item item : backpack) {
+            output += String.format("\n%s Backpack", item.getNombre());
+        }
+        if (leftHandItem != null) {
+            output += String.format("\n%s LeftHand", leftHandItem.getNombre());
+        }
+        if (rightHandItem != null) {
+            output += String.format("\n%s RightHand", rightHandItem.getNombre());
+        }
+        return output;
     }
 }

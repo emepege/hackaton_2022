@@ -23,4 +23,9 @@ public class Zombie implements Character {
     public Point getPoint() {
         return point;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %d %d", nombre, point.getX(), point.getY());
+    }
 }
