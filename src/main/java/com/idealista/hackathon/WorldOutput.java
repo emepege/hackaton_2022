@@ -1,12 +1,20 @@
 package com.idealista.hackathon;
 
+import java.util.List;
+import java.util.Map;
+
 public class WorldOutput {
 
     public void result(World world){
 
+        System.out.println(world.getSurvivors().size() + " " +  world.getZombies().size() + " " +  world.getItems().size() + " " + world.getSize() + " " + world.getCommands().size());
+        Map<String, Survivor> survivors = world.getSurvivors();
+        survivors.forEach((name, survivor) -> {
+            System.out.println(survivor.get);
+        });
 
-        StringBuilder outputLog = new StringBuilder();
-        outputLog.append(world.getSurvivors().size() + " " +  world.getZombies().size() + " " +  world.getItems().size() + " " + world.getSize() + " " + world.getCommands().size() + "/n");
+
+        System.out.println(world.getSurvivors().size() + " " +  world.getZombies().size() + " " +  world.getItems().size() + " " + world.getSize() + " " + world.getCommands().size());
 
     }
 }

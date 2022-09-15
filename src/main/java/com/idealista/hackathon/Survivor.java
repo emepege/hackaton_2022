@@ -42,6 +42,26 @@ public class Survivor implements Character {
         this.point = point.move(direction);
     }
 
+    public int getLife() {
+        return life;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public Item getLeftHandItem() {
+        return leftHandItem;
+    }
+
+    public Item getRightHandItem() {
+        return rightHandItem;
+    }
+
+    public List<Item> getBackpack() {
+        return backpack;
+    }
+
     @Override
     public Point getPoint() {
         return point;
