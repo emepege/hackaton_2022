@@ -13,7 +13,7 @@ public class GameReader {
         BufferedReader reader;
 
         try {
-            reader = new BufferedReader(new FileReader("/home/pconca/desarrollo/hackaton/hackaton_2022/example.txt"));
+            reader = new BufferedReader(new FileReader("/home/smsempere/IdeaProjects/hackathon/hackaton_2022/example.txt"));
             String line = reader.readLine();
 
             // Instrucciones iniciales

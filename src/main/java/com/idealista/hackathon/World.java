@@ -1,5 +1,6 @@
 package com.idealista.hackathon;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class World {
         this.zombies = new HashMap<>();
         this.survivors = new HashMap<>();
         this.items = new HashMap<>();
+        this.commands = new ArrayList<>();
     }
 
     public void addSurvivor(Survivor survivor) {
@@ -33,6 +35,12 @@ public class World {
 
     public Survivor getSurvivor(String name) {
         return survivors.get(name);
+    }
+
+    public Character getCharacter(String name) {
+        Character character = survivors.get(name);
+        if (character == null) character = zombies.get(name);
+        return character;
     }
 
     public void addCommand(Command command) {

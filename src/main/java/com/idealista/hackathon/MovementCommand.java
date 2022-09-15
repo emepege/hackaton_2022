@@ -11,7 +11,7 @@ public class MovementCommand implements Command {
     }
 
     public World execute(World world) {
-        Character character = world.getSurvivor(name);
+        Character character = world.getCharacter(name);
         if (isValidMovement(world, character, direction)) {
             character.move(direction);
             world.addCommand(this);
@@ -20,6 +20,7 @@ public class MovementCommand implements Command {
     }
 
     private boolean isValidMovement(World world, Character character, Direction direction) {
+        if (character == null) return false;
         Point point = character.getPoint().move(direction);
         if (point.getX() > world.getSize() || point.getX() < 0) return false;
         if (point.getY() > world.getSize() || point.getY() < 0) return false;

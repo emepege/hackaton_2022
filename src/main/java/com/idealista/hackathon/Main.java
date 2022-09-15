@@ -7,18 +7,14 @@ public class Main {
         GameReader gameReader = new GameReader();
         Game game = gameReader.read();
 
-
-
-
-
+        World currentWorld = game.getWorld();
+        for (Command command : game.getCommands()) {
+            currentWorld = command.execute(currentWorld);
+        }
 
         WorldOutput worldOutput = new WorldOutput();
         worldOutput.result(game.getWorld());
 
-
-        //TODO leer fichero <World, List<Command>>
-        //TODO foreach command -> commandprocessor
-        //TODO por consola sacar el World
     }
 
 }
